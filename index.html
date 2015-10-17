@@ -1,0 +1,175 @@
+<html>
+<head></head>
+<body>
+
+<script type="text/javascript">
+var semaphore = 0;
+
+function get_json(url,callback)
+{
+    var http_request = new XMLHttpRequest();
+
+    // pobierz dane w formacie JSON z serwera
+    http_request.onreadystatechange = handle_json;
+    http_request.open("GET", url,true);
+    http_request.send();
+
+    function handle_json() {
+        if (http_request.readyState == 4) {
+                if (http_request.status == 200) {
+                        var json_data = http_request.responseText; // pobranie tekstu
+                        var the_object = JSON.parse(json_data);  // zamiana tekstu na obiekt JSON
+                        callback(the_object);
+                }
+        }
+    }
+}
+function add_row(data){
+        var table = document.getElementById("table");
+        var tr;
+        if (data.online)
+            tr = table.insertRow(0);
+        else
+            tr = table.insertRow(-1);
+        var preview = tr.insertCell(0);
+        var name = tr.insertCell(1);
+        var viewers = tr.insertCell(2);
+        var stat = tr.insertCell(3);
+        name.style.backgroundColor = "red";
+        viewers.style.backgroundColor = "red";
+        preview.innerHTML = data.preview;
+        stat.style.backgroundColor = "red";
+        name.innerHTML = data.channel;
+        viewers.innerHTML = 0;
+        if (data.online) {
+            viewers.innerHTML = data.viewers;
+            name.style.backgroundColor = "green";
+            viewers.style.backgroundColor = "green";
+            stat.style.backgroundColor = "green";
+            stat.innerHTML  = data.status;
+        }
+}
+
+function parse_t(json){
+    if (json.stream !== null) {
+        var data = {};
+        data.channel = json.stream.channel.name;
+        data.online = true;
+        data.viewers = json.stream.viewers;
+        data.url = 'http://www.twitch.tv/' + data.channel;
+        data.preview = '<a href='+data.url+ ' target="_blank"><img src='+json.stream.preview.medium+'></img></a>';
+        data.status = json.stream.channel.status;
+        add_row(data);
+    }
+    semaphore--;
+    if (semaphore == 0)
+        sort();
+}
+function get_twitch(channel){
+        semaphore++;
+        script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = 'https://api.twitch.tv/kraken/streams/'+channel+'?callback=parse_t';
+        document.head.appendChild(script);
+        document.head.removeChild(script);
+    }
+
+function get_hitbox(channel){
+        semaphore++;
+        var url='http://api.hitbox.tv/media/live/'+channel;
+		get_json(url,parse)
+        function parse(json){
+            if (json == null) {
+                semaphore--;
+                 if (semaphore == 0)
+                    sort();
+                 return
+            }
+            if (json.media_type == 'live' && json.livestream[0].media_is_live == 1) {
+                var data = {};
+                data.online = true;
+                data.channel = channel;
+                data.viewers = json.livestream[0].media_views;
+                data.url = 'http://www.hitbox.tv/'+ channel;
+                data.preview = '<a href='+data.url+' target="_blank"><img src= http://edge.sf.hitbox.tv'+json.livestream[0].media_thumbnail+'></img></a>';
+                data.status = json.livestream[0].media_status;
+                add_row(data);
+            }
+            semaphore--;
+            if (semaphore == 0)
+                sort();
+        }
+    }
+
+function get_gaminglive(channel){
+        semaphore++;
+        var url='http://api.gaminglive.tv/channels/'+channel;
+		get_json(url,parse)
+        function parse(json){
+            if (json == null) {
+                semaphore--;
+                 if (semaphore == 0)
+                    sort();
+                 return
+            }
+            if (json.state) {
+                var data = {};
+                data.online = true;
+                data.channel = channel;
+                data.viewers = json.state.viewers;
+                data.url = 'http://www.gaminglive.tv/#/channels/'+ channel;
+                data.preview = '<a href='+data.url+ ' target="_blank" ><video loop type="video/mp4" src='+json.state.thumbnailUrl+'></wideo></a>';
+                data.status = json.name;
+                add_row(data);
+            }
+            semaphore--;
+            if (semaphore == 0)
+                sort();
+        }
+    }
+
+function sort() {
+    for (var i = 0; i < table.rows.length; i++)
+    {
+        for (var j = 1; j < table.rows.length-i; j++)
+        {
+            var a = parseInt(table.rows[j-1].cells[2].innerHTML);
+            var b = parseInt(table.rows[j  ].cells[2].innerHTML);
+            if (a < b)
+            {
+                var tmp = table.rows[j-1].innerHTML;
+                table.rows[j-1].innerHTML = table.rows[j].innerHTML;
+                table.rows[j].innerHTML = tmp;
+            }
+        }
+    }
+}
+    var t = document.createElement('table');
+    t.id = "table";
+    t.border = 1;
+    document.body.appendChild(t);
+    window.setInterval(parse, 5*60*1000);
+    parse();
+    function parse(){
+        t.innerHTML = "";
+        get_twitch("izakooo");
+        get_twitch("pashabiceps");
+        get_twitch("byalli");
+        get_gaminglive("wonziu");
+        get_gaminglive("Moskit");
+        get_hitbox("GrabaGra");
+        get_hitbox("Yuuhi");
+        get_hitbox("jarock");
+        get_hitbox("rocklive");
+        get_twitch("esltvpl_cs");
+        get_twitch("innocenttt");
+        get_twitch("warowl");
+        get_twitch("morgenowsky");
+        get_twitch("inetkoxtv");
+        get_twitch("esltv_cs");
+        get_hitbox("Plaga");
+        get_twitch("soushibo");
+    }
+</script>
+</body>
+</html>
