@@ -32,20 +32,51 @@ function checkTime(i) {
     {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
-function update_time() {
-    var d = new Date();
+
+function get_end_time() {
     var e = new Date();
     e.setHours(16);
     e.setMinutes(0);
     e.setSeconds(0);
-    var diff = new Date(e - d);
+    return e
+}
+
+function get_diff() {
+    var d = new Date();
+    
+    var diff = get_end_time() - d;
+    if (diff < 0) {
+        diff = 0;
+    }
+    return new Date(diff);
+}
+
+function get_start_time() {
     var s = new Date();
     s.setHours(8)
     s.setMinutes(0);
     s.setSeconds(0);
-    var len = e - s;
-    var procent = 1 - (e-d)/(e-s);
-    procent *= 100;
+    return s;
+}
+
+function get_lenght() {
+    return get_end_time() - get_start_time();
+}
+
+function get_procent() {
+    var e = get_end_time();
+    var d = new Date();
+    if (d > e) {
+        return 100;
+    }
+    var s = get_start_time();
+    
+    return (1 - (e-d)/(e-s)) * 100;
+}
+
+function update_time() {
+    var diff = get_diff();
+    var procent = get_procent();
     document.getElementById("intervaldiv").innerHTML = checkTime(diff.getUTCHours()) + ":"
     + checkTime(diff.getUTCMinutes()) + ":"
     + checkTime(diff.getUTCSeconds()) + " ("
