@@ -29,6 +29,15 @@ img {
   </div>
 </div>
 
+<h1 style="text-align: center;"id="lastDayOfWeek"></h1>
+
+<div class="progress">
+  <div id="progress_week" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0"
+  aria-valuemin="0" aria-valuemax="100" style="width:0%">
+    0%
+  </div>
+</div>
+
 <h1 style="text-align: center;"id="lastDayOfMonth"></h1>
 
 <div class="progress">
@@ -44,6 +53,18 @@ function checkTime(i) {
     {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+
+
+var lastFriday = function () {
+  var lastDay = moment().endOf('month');
+  if (lastDay.day() >= 5)
+   var sub = lastDay.day() - 5;
+  else
+   var sub = lastDay.day() + 2;
+  return lastDay.subtract(sub, 'days');
+}
+
+
 
 function get_end_time() {
     var e = new Date();
@@ -99,13 +120,11 @@ function update_time() {
 }
 
 function get_last_day_of_month() {
-    var today = new Date();
-    var lastDayOfMonth = new Date(today.getFullYear(), today.getMonth()+1, 0);
-    return lastDayOfMonth;
+    return lastFriday();
 }
 
 function get_day_diff() {
-    var diff = moment().endOf('month').diff(moment())
+    var diff = lastFriday().diff(moment())
     return new moment.duration(diff);
 }
 
@@ -116,7 +135,7 @@ function get_day_diff_string() {
 }
 
 function get_day_procent() {
-    var all_diff = moment.duration(moment().endOf('month').diff(moment().startOf("month")));
+    var all_diff = moment.duration(lastFriday().diff(moment().startOf("month")));
     var diff = get_day_diff();
     return (1 - diff / all_diff) * 100;
 }
@@ -129,10 +148,50 @@ function update_date() {
     progress_bar.innerHTML = procent.toFixed(2) + "%";
 }
 
+function get_next_freeday_diff() {
+    var end = moment().day(5);
+    end.hours(16);
+    end.minutes(0);
+    end.seconds(0);
+    var diff = end.diff(moment());
+    return moment.duration(diff);
+}
+
+function get_whole_week_diff() {
+    var end = moment().day(5);
+    end.hours(16);
+    end.minutes(0);
+    end.seconds(0);
+    var diff = end.diff(moment().day(1));
+    return moment.duration(diff);
+}
+
+function get_week_diff_string() {
+    var d = get_next_freeday_diff();
+    return d.days() + " dni " + d.hours() + " godzin " + d.minutes() + " minut "
+    + d.seconds() + " sekund ";
+}
+
+function get_week_procent() {
+    var all_diff = get_whole_week_diff();
+    var diff = get_next_freeday_diff();
+    return (1 - diff / all_diff) * 100;
+}
+
+function update_week() {
+    document.getElementById("lastDayOfWeek").innerHTML = get_week_diff_string();
+    var progress_bar = document.getElementById("progress_week");
+    var procent = get_week_procent();
+    progress_bar.style.width = procent + "%";
+    progress_bar.innerHTML = procent.toFixed(2) + "%";
+}
+
 window.onload = function () {
     update_time();
+    update_week();
     update_date();
     setInterval(update_time, 1000);
+    setInterval(update_week, 1000);
     setInterval(update_date, 1000);
 }
 
