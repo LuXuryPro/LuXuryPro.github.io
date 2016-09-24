@@ -19,7 +19,9 @@ function get_json(url,callback)
 
     // pobierz dane w formacie JSON z serwera
     http_request.onreadystatechange = handle_json;
-    http_request.open("GET", url,true);
+    http_request.open("GET", url, true);
+    if (url.indexOf("twitch") != -1)
+        http_request.setRequestHeader("Client-ID", "ewvlchtxgqq88ru9gmfp1gmyt6h2b93");
     http_request.send();
 
     function handle_json() {
@@ -65,11 +67,8 @@ function parse_t(json){
     }
 }
 function get_twitch(channel){
-        script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = 'https://api.twitch.tv/kraken/streams/'+channel+'?callback=parse_t';
-        document.head.appendChild(script);
-        document.head.removeChild(script);
+        var url = 'https://api.twitch.tv/kraken/streams/'+channel;
+        get_json(url, parse_t);
     }
 
 function get_hitbox(channel){
@@ -167,6 +166,7 @@ function get_gaminglive(channel){
         get_twitch("GynvaelPL");
        	get_twitch("motar2k");
         get_hitbox("komputronikgaming");
+        get_hitbox("esportchallengetv");
     }
 </script>
 </body>
