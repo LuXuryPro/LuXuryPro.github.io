@@ -22,6 +22,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username:  LuxuryPro
 google_analytics: UA-97780102-1
+disqus:
+    shortname: luxurypro-github-io
 
 # Build settings
 markdown: kramdown

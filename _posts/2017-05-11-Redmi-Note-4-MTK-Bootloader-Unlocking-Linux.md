@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Redmi Note 4 MTK Bootloader Unlocking using Linux
 categories: xiaomi android
 ---
