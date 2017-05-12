@@ -11,8 +11,10 @@ bootlader on other Xiaomi phone that Redmi Note 4 and it is MTK, then you can
 try unlocking it using tools presented here.
 
 # Disclaimer
-> I don't take any responsibility for bricked or broken devices.
-> You are performing all steps at your own risk.
+> 1. I don't take any responsibility for bricked or broken devices.
+> 2. You are performing all steps at your own risk.
+> 3. Your warranty in most cases will be void.
+
 
 # General informations
 Probably many of you knows that
@@ -27,8 +29,38 @@ Right now there is not way to unlock bootloader using linux only :(
 So install one
 on physical machine or virtual one.
 
-# Unlocking process
+# Before you start
+To make sure that bootloader in your Xiaomi Redmi Note 4 MTK is actually locked
+we will use Android Fastboot tool.
+- Install Android tools in your system (search for **android-tools** in
+        package manager)
+- Turn off your phone
+- Press and hold **Volume (-) and Power** buttons **together**.
+    Relase buttons when Fastboot screen appears.
+- Connect your phone to linux PC
+- Issue following command to check if device is connected:
+    ~~~bash
+    fastboot devices
+    ~~~
+    Non empty list of fastboot devices should appear
+- Issue next command to check if bootloader is locked:
+    ~~~bash
+    fastboot getvar unlocked
+    ~~~
+    If you get status like:
+    ~~~
+    unlocked: "no"
+    ~~~
+    that means you need to unlock, so continue reading tutorial.
 
+    If this appears:
+    ~~~
+    unlocked: "yes"
+    ~~~
+    then you don't need to do anything.
+
+
+# Unlocking process
 ## Preparation
 - Create Xiaomi Account if you don't have one
     - Go to <https://account.xiaomi.com/>
@@ -66,7 +98,7 @@ my vary between users.
 - Install **Oracle VM VirtualBox Extension Pack**
     - If you have it in your linux distribution repository then install from it
     - If not then install manually
-        - Downlaod <https://www.virtualbox.org/wiki/Downloads>
+        - Download <https://www.virtualbox.org/wiki/Downloads>
         - Launch virtual box
         - Go to File -> Preferences -> Extensions
         - Click on small orange button and select downloaded file
@@ -126,26 +158,29 @@ minutes. This is normal.
 Now you when you have China Developer ROM installed it is time for got throught
 setup wizard.
 After your phone is ready you must bind it to Xiaomi Account which you have
-created in previous steps. Follow following steps in configuration wizard.
+created in previous steps. Follow this steps in configuration wizard:
 - Change language to English
 - Connect to network
 - Login to Mi Account (very important step)
 - Finish wizard
+
+After wizard is done:
 - Go to Setting -> About phone -> Tap on MIUI version for 10 times until message
     saying that your are developer now appears
 - Go to Setting -> Additional settings -> Developer options
 - Turn on USB Debuging
 
 ## Unlocking Bootloader
-- Start Mi Unlock Tool on Windows
+- Start Mi Unlock Tool on **Windows**
 - On first screen provide username and password and login to your Xiaomi account
 - Turn off your phone and turn in on in Fastboot mode. To do so,
-    hold **Volume (+) and
+    hold **Volume (-) and
     Power** buttons **together**. Relase buttons when Fastboot screen appears.
 - Follow steps in Mi Unlock app and connect your phone to PC via USB cable when
     you are asked to do so.
 - If everything works out well Mi Unlock will stop at 100% and **your bootloader
-    will be unlocked**.
+    will be unlocked** (you can verify this by using fastboot tool method
+            describled at begining of tutorial).
 - Enjoy!
 
 ## What to do next ?
