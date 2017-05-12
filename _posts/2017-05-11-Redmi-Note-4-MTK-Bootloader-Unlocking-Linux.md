@@ -51,7 +51,8 @@ my vary between users.
     <https://drive.google.com/open?id=0B9wtW2KGOf0RYWhLNG9ybWM3OG8>
     and download old version of Mi Flash tool. This is needed for bypass
     possible error saying that **binding time is too short**.
-- Install application of windows machine
+- Install application in windows machine or go to next section where I
+  describled process of preparing virtual machine.
 
 ## Using Virtual Machine instead of physical Windows PC
 - Install Virtual Box via package manager
