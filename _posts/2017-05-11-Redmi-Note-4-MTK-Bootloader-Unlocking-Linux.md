@@ -7,8 +7,8 @@ categories: xiaomi android
 After long and tedious process of unlocking bootloader in my Xiaomi Redmi Note 4
 phone using linux, to sum up I decided to write *definitive* tutorial about it.
 This tutorial is written especially for MTK SOC devices, so if you have locked
-bootlader on other Xiaomi phone that Redmi Note 4, then you can try unlocking it
-using tools presented here.
+bootlader on other Xiaomi phone that Redmi Note 4 and it is MTK, then you can
+try unlocking it using tools presented here.
 
 # Disclaimer
 > I don't take any responsibility for bricked or broken devices.
