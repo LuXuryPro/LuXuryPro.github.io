@@ -28,7 +28,7 @@ disqus:
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-modernist
+theme: minima
 gems:
   - jekyll-feed
 exclude:
