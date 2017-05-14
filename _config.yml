@@ -24,7 +24,7 @@ twitter_username:
 github_username:  LuxuryPro
 google_analytics: UA-97780102-1
 disqus:
-    shortname: luxurypro-github-io
+    shortname: rootshell
 
 # Build settings
 markdown: kramdown
