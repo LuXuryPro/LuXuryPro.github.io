@@ -38,7 +38,7 @@ we will use Android Fastboot tool.
 - Install Android tools in your system (search for **android-tools** in
         package manager)
 - Turn off your phone
-- Press and hold **Volume (-) and Power** buttons **together**.
+- Press and hold **Volume (-)** and **Power** buttons **together**.
     Relase buttons when Fastboot screen appears.
 - Connect your phone to linux PC
 - Issue following command to check if device is connected:
@@ -124,13 +124,18 @@ my vary between users.
 To be able to unlock bootlader on Redmi Note 4 you need China Developer ROM
 installed on your device.
 - Backup all your important data
-- Download **Redmi Note 4 Latest China Developer Version Fastboot** from
+- Make sure that your phone battery is at least **50% charged**
+- Download **Redmi Note 4 Latest China Developer Version Fastboot** ROM from
     <http://en.miui.com/a-234.html>
-- Download custom CUST.BIN <https://www.dropbox.com/s/gyrpatlwi4ok1ct/cust_global.rar?dl=0>
+- Download custom cust.img (RAR MD5: 00d47e8fd3e64bf989dd329ebc37d6a3):
+    - Mirror 1 <https://www.dropbox.com/s/gyrpatlwi4ok1ct/cust_global.rar?dl=0>
+    - Mirror 2 <http://www39.zippyshare.com/v/H3QJXZd1/file.html>
 - Extract **ROM** archive
-- **Replace** CUST.BIN in images/ dir with custom one you have downloaded
-- Download latest version of SP Flash Tool for **Linux** from
-    <https://androidmtk.com/smart-phone-flash-tool>
+- Extract **cust** archive
+- **Replace** cust.img in images/ dir with custom one you have downloaded
+- Download **latest version** of SP Flash Tool for **Linux**
+    - Mirror 1 <https://androidmtk.com/smart-phone-flash-tool>
+    - Mirror 2 <https://tehnotone.com/download-sp-flash-tool-v5-for-linux-latest-versions/>
 - Extract downloaded archive
 - Add your user to special linux group
     - For ubuntu
@@ -177,8 +182,8 @@ After wizard is done:
 - Start Mi Unlock Tool on **Windows**
 - On first screen provide username and password and login to your Xiaomi account
 - Turn off your phone and turn in on in Fastboot mode. To do so,
-    hold **Volume (-) and
-    Power** buttons **together**. Relase buttons when Fastboot screen appears.
+    hold **Volume (-)** and
+    **Power** buttons **together**. Relase buttons when Fastboot screen appears.
 - Follow steps in Mi Unlock app and connect your phone to PC via USB cable when
     you are asked to do so.
 - If everything works out well Mi Unlock will stop at 100% and **your bootloader
