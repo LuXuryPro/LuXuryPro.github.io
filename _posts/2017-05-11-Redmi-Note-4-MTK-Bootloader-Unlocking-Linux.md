@@ -1,14 +1,17 @@
 ---
 layout: post
 title: Redmi Note 4 MTK Bootloader Unlocking using Linux
-categories: xiaomi android
+description: Xiaomi Redmi Note 4 bootloader unlocking using Linux operating system
+lang: en-us
+categories: android
 ---
 
 After long and tedious process of unlocking bootloader in my Xiaomi Redmi Note 4
 phone using linux, to sum up I decided to write *definitive* tutorial about it.
-I collected all informations that were scattered around internet and gather them
-in one place.
+I have collected all informations that were scattered around internet and
+gathered them in one place.
 
+#### Note
 This tutorial is written especially for MTK SOC devices, so if you have locked
 bootlader on other Xiaomi phone that Redmi Note 4 and it is MTK, then you can
 try unlocking it using tools and methods presented here.
@@ -82,7 +85,7 @@ we will use Android Fastboot tool.
     > I want to install custom ROM.
 - Wait for grant permissions SMS message. Myself, I have waited for 10 hours. This time
 my vary between users.
-- After receiving email go to
+- After receiving SMS go to
     <https://drive.google.com/open?id=0B9wtW2KGOf0RYWhLNG9ybWM3OG8>
     and download old version of Mi Flash tool. This is needed for bypass
     possible error saying that **binding time is too short**.
