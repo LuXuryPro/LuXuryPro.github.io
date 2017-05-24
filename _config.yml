@@ -29,7 +29,7 @@ twitter_username:
 github_username:  LuxuryPro
 google_analytics: UA-97780102-1
 disqus:
-    shortname: rootshell
+    shortname: reversance
 
 # Build settings
 markdown: kramdown
