@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <meta charset="utf-8">
+
+        
+
+        <base href="https://www.reversance.com/">
+        <title>Reversance blog</title>
+        <link rel="canonical" href="https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/">
+        <link href="" rel="alternate" type="application/rss+xml" title="Reversance blog"/>
+
+        
+<link rel="stylesheet" href="css/styles.css">
+
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js"></script>
+
+    </head>
+    <body>
+        <div class="column">
+
+<header class="header">
+    <a href="/" class="title">Reversance blog</a>
+    <p>Linux - Android - Programming - Security - Reverse Engineering</p>
+</header>
+
+
+<section id="main">
+    <header class="post-header">
+      <p class="post-title"><a href="https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/">Redmi Note 4 MTK Bootloader Unlocking using Linux </a></p>
+      <p class="post-meta">11 May 2017 - Can be read in 6 min </p>
+      
+        <p> Tags:
+        
+            <a class=tag href="/tags/android">#android</a>
+        
+            <a class=tag href="/tags/bootloader">#bootloader</a>
+        
+        </p>
+        
+    </header>
+    <article itemprop="articleBody" id="content">
+       
+
+<p>After long and tedious process of unlocking bootloader in my Xiaomi Redmi Note 4
+phone using linux, to sum up I decided to write <em>definitive</em> tutorial about it.
+I have collected all informations that were scattered around internet and
+gathered them in one place.</p>
+
+<h4 id="note">Note</h4>
+
+<p>This tutorial is written especially for MTK SOC devices, so if you have locked
+bootlader on other Xiaomi phone that Redmi Note 4 and it is MTK, then you can
+try unlocking it using tools and methods presented here.</p>
+
+<h2 id="disclaimer">Disclaimer</h2>
+
+<blockquote>
+<ol>
+<li>I don&rsquo;t take any responsibility for bricked or broken devices.</li>
+<li>You are performing all steps at your own risk.</li>
+<li>Your warranty in most cases will be void.</li>
+</ol>
+</blockquote>
+
+<h2 id="general-informations">General informations</h2>
+
+<p>Probably many of you knows that
+<a href="http://en.miui.com/thread-202290-1-1.html">bootloader unlocking process</a>
+in recent Xiaomi phones is difficult and requires a lot of work.
+First of all it requires special tool called Mi Unlock. Unfortunately it works
+only in Windows operating system. Second thing is that to unlock bootloader you
+must <a href="https://miui.com/unlock/">ask for premission</a> first. Then you need to
+wait for SMS message that you are allowed to proceed to next steps. To sum up
+this part - <strong>we will need to use Windows operating system anyway</strong>.
+Right now there is not way to unlock bootloader using linux only :(
+So install one
+on physical machine or virtual one.</p>
+
+<h2 id="before-you-start">Before you start</h2>
+
+<p>To make sure that bootloader in your Xiaomi Redmi Note 4 MTK is actually locked
+we will use Android Fastboot tool.</p>
+
+<ul>
+<li>Install Android tools in your system (search for <strong>android-tools</strong> in
+    package manager)</li>
+<li>Turn off your phone</li>
+<li>Press and hold <strong>Volume (-)</strong> and <strong>Power</strong> buttons <strong>together</strong>.
+Relase buttons when Fastboot screen appears.</li>
+<li>Connect your phone to linux PC</li>
+
+<li><p>Issue following command to check if device is connected:</p>
+
+<pre><code class="language-bash">fastboot devices
+</code></pre>
+
+<p>Non empty list of fastboot devices should appear</p></li>
+
+<li><p>Issue next command to check if bootloader is locked:</p>
+
+<pre><code class="language-bash">fastboot getvar unlocked
+</code></pre>
+
+<p>If you get status like:</p>
+
+<pre><code>unlocked: &quot;no&quot;
+</code></pre>
+
+<p>that means you need to unlock, so continue reading tutorial.</p>
+
+<p>If this appears:</p>
+
+<pre><code>unlocked: &quot;yes&quot;
+</code></pre>
+
+<p>then you don&rsquo;t need to do anything.</p></li>
+</ul>
+
+<h2 id="unlocking-process">Unlocking process</h2>
+
+<h3 id="preparation">Preparation</h3>
+
+<ul>
+<li>Create Xiaomi Account if you don&rsquo;t have one
+
+<ul>
+<li>Go to <a href="https://account.xiaomi.com/">https://account.xiaomi.com/</a></li>
+<li>At button of page change language from Chinese to English</li>
+<li>Click on <strong>Create Mi Account</strong></li>
+<li>Fill form and click <strong>Create Mi Account</strong></li>
+</ul></li>
+
+<li><p>Pass all security check-ups</p>
+
+<ul>
+<li>Login to your account <a href="https://account.xiaomi.com/">https://account.xiaomi.com/</a></li>
+<li>Fulfill all 4 tasks (Password, Recovery email,&hellip;)</li>
+<li>Make sure there is green bar saying that your account is secure</li>
+</ul>
+
+<p>This step in necessary to make sure your bootloader unlock permission grant
+application will be accepted faster.</p></li>
+
+<li><p>Go to <a href="https://miui.com/unlock/apply.php">https://miui.com/unlock/apply.php</a> and apply for unlocking your device.
+Provide reason of unlocking like:
+&gt; I want to install custom ROM.</p></li>
+
+<li><p>Wait for grant permissions SMS message. Myself, I have waited for 10 hours. This time
+my vary between users.</p></li>
+
+<li><p>After receiving SMS go to
+<a href="https://drive.google.com/open?id=0B9wtW2KGOf0RYWhLNG9ybWM3OG8">https://drive.google.com/open?id=0B9wtW2KGOf0RYWhLNG9ybWM3OG8</a>
+and download old version of Mi Flash tool. This is needed for bypass
+possible error saying that <strong>binding time is too short</strong>.</p></li>
+
+<li><p>Install application in windows machine or go to next section where I
+describled process of preparing virtual machine.</p></li>
+</ul>
+
+<h3 id="using-virtual-machine-instead-of-physical-windows-pc">Using Virtual Machine instead of physical Windows PC</h3>
+
+<ul>
+<li>Install Virtual Box via package manager</li>
+<li>Create new Virtual Machine and install Windows on it (I recommend using Windows
+7)</li>
+<li>Install <strong>VirtualBox Guest Addons</strong> on your virtual machine. While it is
+running, click on <strong>Devices -&gt; Install Guest Addons</strong>. Finish installation
+inside
+virtual machine.</li>
+<li>Power off virtual machine</li>
+<li>Install <strong>Oracle VM VirtualBox Extension Pack</strong>
+
+<ul>
+<li>If you have it in your linux distribution repository then install from it</li>
+<li>If not then install manually
+
+<ul>
+<li>Download <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a></li>
+<li>Launch virtual box</li>
+<li>Go to File -&gt; Preferences -&gt; Extensions</li>
+<li>Click on small orange button and select downloaded file</li>
+<li>Go throught install wizard steps and finally provide root password for
+installation completion</li>
+<li>Restart virtual box</li>
+</ul></li>
+</ul></li>
+<li>Go to your virtual machine settings</li>
+<li>Select USB</li>
+<li>Check <strong>Enable USB Controller</strong></li>
+<li>Select <strong>USB 2.0 (EHCI) Controller</strong></li>
+<li>Click on small blue icon</li>
+<li><em>New Filter 1</em> position will appear on list</li>
+<li>Make sure new filter is checked</li>
+<li>You can test if USB is working by pluging USB Stick to your PC while virtual
+machine is running. It should appear inside VM.</li>
+<li>If everything is working install Mi Flash on virtual machine</li>
+</ul>
+
+<h3 id="flashing-china-developer-rom">Flashing China Developer ROM</h3>
+
+<p>To be able to unlock bootlader on Redmi Note 4 you need China Developer ROM
+installed on your device.</p>
+
+<ul>
+<li>Backup all your important data</li>
+<li>Make sure that your phone battery is at least <strong>50% charged</strong></li>
+<li>Download <strong>Redmi Note 4 Latest China Developer Version Fastboot</strong> ROM from
+<a href="http://en.miui.com/a-234.html">http://en.miui.com/a-234.html</a></li>
+<li>Download custom cust.img (RAR MD5: 00d47e8fd3e64bf989dd329ebc37d6a3):
+
+<ul>
+<li>Mirror 1 <a href="https://www.dropbox.com/s/gyrpatlwi4ok1ct/cust_global.rar?dl=0">https://www.dropbox.com/s/gyrpatlwi4ok1ct/cust_global.rar?dl=0</a></li>
+<li>Mirror 2 <a href="http://www39.zippyshare.com/v/H3QJXZd1/file.html">http://www39.zippyshare.com/v/H3QJXZd1/file.html</a></li>
+</ul></li>
+<li>Extract <strong>ROM</strong> archive</li>
+<li>Extract <strong>cust</strong> archive</li>
+<li><strong>Replace</strong> cust.img in images/ dir with custom one you have downloaded</li>
+<li>Download <strong>latest version</strong> of SP Flash Tool for <strong>Linux</strong>
+
+<ul>
+<li>Mirror 1 <a href="https://androidmtk.com/smart-phone-flash-tool">https://androidmtk.com/smart-phone-flash-tool</a></li>
+<li>Mirror 2 <a href="https://tehnotone.com/download-sp-flash-tool-v5-for-linux-latest-versions/">https://tehnotone.com/download-sp-flash-tool-v5-for-linux-latest-versions/</a></li>
+</ul></li>
+<li>Extract downloaded archive</li>
+
+<li><p>Add your user to special linux group</p>
+
+<ul>
+<li><p>For ubuntu</p>
+
+<pre><code class="language-bash">sudo adduser username dialout
+</code></pre></li>
+
+<li><p>For arch</p>
+
+<pre><code class="language-bash">sudo gpasswd -a username uucp
+</code></pre></li>
+</ul></li>
+
+<li><p>Logout and login again to make change live</p></li>
+
+<li><p>run sp_tool.sh which is located in folder where you extracted SP Tool archive</p></li>
+
+<li><p>Set <strong>Download Agent</strong> to <strong>MTK_All_In_One_DA.BIN</strong></p></li>
+
+<li><p>Set <strong>Scatter-loading File</strong> to <strong>MT6797_Android_scatter.txt</strong> which is
+located in <strong>ROM</strong> images/ dir</p></li>
+
+<li><p><strong>Uncheck preloader</strong> position on the list of images to push to device</p></li>
+
+<li><p>Turn off phone</p></li>
+
+<li><p>Click <strong>Download</strong> Button in SP Flash Tool</p></li>
+
+<li><p>Click and hold <strong>Volume Down (-)</strong> on phone and while holding it plug your phone
+to PC via USB cable</p></li>
+
+<li><p>If phone is detected then yellow bar appears at button and flashing process
+begins. You can release <strong>Volume Down (-)</strong> button.</p></li>
+
+<li><p>After flashing is done <strong>Download OK</strong> message appears.</p></li>
+
+<li><p>You can unplug your phone and turn it on. First boot might take up to 10
+minutes. This is normal.</p></li>
+</ul>
+
+<h3 id="binding-mi-account-to-phone">Binding Mi Account to phone</h3>
+
+<p>Now you when you have China Developer ROM installed it is time for got throught
+setup wizard.
+After your phone is ready you must bind it to Xiaomi Account which you have
+created in previous steps. Follow this steps in configuration wizard:</p>
+
+<ul>
+<li>Change language to English</li>
+<li>Connect to network</li>
+<li>Login to Mi Account (very important step)</li>
+<li>Finish wizard</li>
+</ul>
+
+<p>After wizard is done:</p>
+
+<ul>
+<li>Go to Setting -&gt; About phone -&gt; Tap on MIUI version for 10 times until message
+saying that your are developer now appears</li>
+<li>Go to Setting -&gt; Additional settings -&gt; Developer options</li>
+<li>Turn on USB Debuging</li>
+</ul>
+
+<h3 id="unlocking-bootloader">Unlocking Bootloader</h3>
+
+<ul>
+<li>Start Mi Unlock Tool on <strong>Windows</strong></li>
+<li>On first screen provide username and password and login to your Xiaomi account</li>
+<li>Turn off your phone and turn in on in Fastboot mode. To do so,
+hold <strong>Volume (-)</strong> and
+<strong>Power</strong> buttons <strong>together</strong>. Relase buttons when Fastboot screen appears.</li>
+<li>Follow steps in Mi Unlock app and connect your phone to PC via USB cable when
+you are asked to do so.</li>
+<li>If everything works out well Mi Unlock will stop at 100% and <strong>your bootloader
+will be unlocked</strong> (you can verify this by using fastboot tool method
+        describled at begining of tutorial).</li>
+<li>Enjoy!</li>
+</ul>
+
+<h2 id="what-to-do-next">What to do next ?</h2>
+
+<p>Now when you have your bootloader unlocked you will probably want to <strong>flash
+custom Recovery</strong> to manage your ROMS. This process will be described in next
+post.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://forum.xda-developers.com/redmi-note-4/how-to/guide-redmi-note-4-unlock-bootloader-t3517806">https://forum.xda-developers.com/redmi-note-4/how-to/guide-redmi-note-4-unlock-bootloader-t3517806</a></li>
+<li><a href="https://forum.xda-developers.com/general/rooting-roms/tutorial-how-to-setup-spflashtoollinux-t3160802">https://forum.xda-developers.com/general/rooting-roms/tutorial-how-to-setup-spflashtoollinux-t3160802</a></li>
+<li><a href="http://en.miui.com/thread-202290-1-1.html">http://en.miui.com/thread-202290-1-1.html</a></li>
+<li><a href="http://en.miui.com/thread-371349-1-1.html">http://en.miui.com/thread-371349-1-1.html</a></li>
+</ul>
+
+    </article>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'reversance';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+<footer class="bottom-footer">
+  <div class="copyright">
+    <p>
+    &copy; Radek (LuxuryPro).
+    <a href="http://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution">Some rights reserved</a>;
+    please attribute properly and link back.
+    
+    <a href="https://github.com/LuxuryPro">github.</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+    renderMathInElement(document.getElementById('main'));
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-97780102-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <meta charset="utf-8">
+
+        
+
+        <base href="https://www.reversance.com/">
+        <title>Reversance blog</title>
+        <link rel="canonical" href="https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/">
+        <link href="" rel="alternate" type="application/rss+xml" title="Reversance blog"/>
+
+        
+<link rel="stylesheet" href="css/styles.css">
+
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js"></script>
+
+    </head>
+    <body>
+        <div class="column">
+
+<header class="header">
+    <a href="/" class="title">Reversance blog</a>
+    <p>Linux - Android - Programming - Security - Reverse Engineering</p>
+</header>
+
+
+<section id="main">
+    <header class="post-header">
+      <p class="post-title"><a href="https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/">Installing and using TWRP Recovery for Xiaomi Redmi Note 4 MTK </a></p>
+      <p class="post-meta">30 May 2017 - Can be read in 4 min </p>
+      
+        <p> Tags:
+        
+            <a class=tag href="/tags/twrp">#twrp</a>
+        
+            <a class=tag href="/tags/xiaomi">#xiaomi</a>
+        
+            <a class=tag href="/tags/android">#android</a>
+        
+        </p>
+        
+    </header>
+    <article itemprop="articleBody" id="content">
+       
+
+<p>In the last post I have presented you way of unlocking bootloader in Xiaomi
+Redmi Note 4. Now it is the time to install custom Recovery Image and use
+it to flash your desired ROM. Remember that to follow this instructions
+you need to have unlocked bootloader.</p>
+
+<h2 id="warning">Warning</h2>
+
+<blockquote>
+<p>Custom recovery image will allow you to make deep modifications in your phone
+software. This includes complete remove of Android operation system (don&rsquo;t
+worry it can be installed again). So if you don&rsquo;t exactly know what you are
+doing then don&rsquo;t install custom recovery and stay with official MIUI updates.</p>
+</blockquote>
+
+<h2 id="choosing-recovery-image">Choosing Recovery Image</h2>
+
+<p>Before you download any files you must decide if you will use custom recovery
+together with official ROM. If the answer is <strong>yes</strong> then you should download
+latest version of <strong>Cofface TWRP</strong>. I recommend this version also for users
+that will use only unofficial ROMs. There is also other version of this recovery
+for Xiaomi Redmi Note 4 MTK but I haven&rsquo;t tested it
+(<a href="https://www.androidfilehost.com/?fid=24694152805484974">https://www.androidfilehost.com/?fid=24694152805484974</a>). It is also worth mentioning
+that there is no official TWRP for this phone (<a href="https://twrp.me/Devices/">https://twrp.me/Devices/</a>).</p>
+
+<h2 id="warning-1">Warning</h2>
+
+<blockquote>
+<p>If you want to user official Xiaomi ROMs then remember - never flash
+Global or China Stable version. If you do so then it will lock you bootloader
+again.</p>
+</blockquote>
+
+<h3 id="installation-steps-to-follow">Installation Steps to follow</h3>
+
+<ol>
+<li>Go to <a href="https://www.androidfilehost.com/?fid=385035244224401067">https://www.androidfilehost.com/?fid=385035244224401067</a> and download
+recovery image.</li>
+<li>Make sure your phone is at least 50% charged.</li>
+<li>Tour off your phone and turn it on into recovery mode
+
+<ul>
+<li>Hold down <strong>Vol (-)</strong> and <strong>Power</strong> buttons <strong>together</strong></li>
+<li>Release buttons when Android MIUI image appears</li>
+</ul></li>
+<li>Connect your phone to PC via USB cable</li>
+<li>Make sure you have <strong>android tools</strong> installed (fastboot and adb commands)</li>
+
+<li><p>Check if phone is detected by fastboot</p>
+
+<pre><code class="language-bash">fastboot devices
+</code></pre>
+
+<p>The result should be similar to:</p>
+
+<pre><code class="language-bash">01234567890abcdef           fastboot
+</code></pre></li>
+
+<li><p>Go to catalogue where you have downloaded fastboot image</p></li>
+
+<li><p>To flash recovery image type:</p>
+
+<pre><code class="language-bash">fastboot flash recovery cofface_twrp_nikel_recovery1124.img
+</code></pre></li>
+
+<li><p>Boot your phone using new recovery image to finish installation process</p>
+
+<pre><code class="language-bash">fastboot boot cofface_twrp_nikel_recovery1124.img
+</code></pre></li>
+
+<li><p>Your phone should start and TWRP splash screen should appear</p></li>
+
+<li><p>After recovery start you might notice that default language is Chinese. To
+change it click on button on the <strong>right</strong> and from popup menu select
+desired language.</p></li>
+
+<li><p>After that being done read information about unmodified system partition
+which is presented on your phone screen.</p></li>
+
+<li><p>If you want to root your phone then <strong>swipe to allow modifications</strong>. If not
+then click on <strong>Keep read only</strong>. You can allways change your decission by
+flashing TWRP again.</p></li>
+
+<li><p>You are done TWRP is successfully installed.</p></li>
+</ol>
+
+<h2 id="using-twrp">Using TWRP</h2>
+
+<p>You can use your new recovery for:</p>
+
+<ul>
+<li>Installing custom and official ROMs</li>
+<li>Backup and restore your phone and all your data</li>
+<li>Clear and wipe cache or restore phone to factory settings</li>
+</ul>
+
+<p>I will show you how to install custom ROM, because it is somewhat complicated.</p>
+
+<h3 id="flashing-xiaomi-eu-rom">Flashing Xiaomi.eu ROM</h3>
+
+<p>After installing recovery it&rsquo;s time to flash custom ROM. I recommend using
+<a href="https://xiaomi.eu/">https://xiaomi.eu/</a> ROMs, because they are close to global version of MIUI
+and they will never lock your bootloader. This ROMs have, a lot of additional
+features compared to official one.</p>
+
+<blockquote>
+<p>Flashing Xiaomi.en ROM will not remove your internal memory data (pictures,
+music, videos, etc&hellip;)</p>
+</blockquote>
+
+<ol>
+<li>Go to <a href="https://xiaomi.eu/community/forums/miui-weekly-rom-releases.103/">https://xiaomi.eu/community/forums/miui-weekly-rom-releases.103/</a> and
+pick latest forum thread.</li>
+<li>Click on link in <strong>download weekly</strong> section</li>
+<li>It will bring you to <a href="https://www.androidfilehost.com/?w=files&amp;flid=183557">https://www.androidfilehost.com/?w=files&amp;flid=183557</a></li>
+<li>Download file that contains <strong>HMNote4</strong> if it&rsquo;s name
+(not <strong>HMNote4X</strong> - this one is for another device model)</li>
+<li>Put downloaded file in your phone internal memory. Don&rsquo;t unzip archive.</li>
+<li>Turn your phone into recovery mode
+
+<ul>
+<li>Turn off your phone</li>
+<li>Hold down <strong>Vol (+)</strong> and <strong>Power</strong> buttons <strong>together</strong></li>
+<li>Release buttons when TWRP Recovery boot screen appears</li>
+</ul></li>
+<li>In you want you can backup your phone now using <strong>Backup</strong> option.</li>
+<li>After that select <strong>Install</strong> option</li>
+<li>If file manager select zip archive you have put in your phone</li>
+<li>Swipe to confirm flash</li>
+<li>Flashing process should take up to 10 minutes</li>
+<li>After flashing finishes click **Wipe cache/dalvik</li>
+<li>Next click <strong>Reboot system</strong></li>
+<li>Your phone will start for about 10 minutes this is normal</li>
+<li>At the moment MIUI Creator appears Xiaomi.eu ROM installation if finished</li>
+<li>Enjoy your new ROM</li>
+</ol>
+
+<h3 id="rooting-phone">Rooting phone</h3>
+
+<p>With help of TWRP recovery rooting Xiaomi Redmi Note 4 phone is easy process.</p>
+
+<ol>
+<li>Download SuperSU <a href="https://download.chainfire.eu/1021/SuperSU/SR3-SuperSU-v2.79-SR3-20170114223742.zip">https://download.chainfire.eu/1021/SuperSU/SR3-SuperSU-v2.79-SR3-20170114223742.zip</a></li>
+<li>Put downloaded zip archive in your phone internal memory</li>
+<li>Turn your phone into recovery mode
+
+<ul>
+<li>Turn off your phone</li>
+<li>Hold down <strong>Vol (+)</strong> and <strong>Power</strong> buttons <strong>together</strong></li>
+<li>Release buttons when TWRP Recovery boot screen appears</li>
+</ul></li>
+<li>After that select <strong>Install</strong> option</li>
+<li>In file manager select SuperSU zip archive you have put in your phone</li>
+<li>Swipe to confirm flash</li>
+<li>After flashing finishes click **Wipe cache/dalvik</li>
+<li>Next click <strong>Reboot system</strong></li>
+<li>Your phone will restart several times - this is normal</li>
+<li>Finaly your phone will start normaly</li>
+<li>Install Root Checker all from Google Play <a href="https://play.google.com/store/apps/details?id=com.joeykrim.rootcheck&amp;hl=pl">https://play.google.com/store/apps/details?id=com.joeykrim.rootcheck&amp;hl=pl</a></li>
+<li>Using installed app confirm that you have successfull rooted your phone
+
+<ul>
+<li>Alter clicking <strong>Verify Root Status</strong> SuperSU window will appear, asking
+for root permission - allow it</li>
+<li>You should see green message saying that root access in successfully
+installed on your phone</li>
+</ul></li>
+<li>Enjoy your rooted device</li>
+</ol>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="http://en.miui.com/thread-352104-1-1.html">http://en.miui.com/thread-352104-1-1.html</a></li>
+<li><a href="https://forum.xda-developers.com/redmi-note-4/development/cofface-redmi-note4-twrp-recovery-t3457394">https://forum.xda-developers.com/redmi-note-4/development/cofface-redmi-note4-twrp-recovery-t3457394</a></li>
+</ul>
+
+    </article>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'reversance';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+<footer class="bottom-footer">
+  <div class="copyright">
+    <p>
+    &copy; Radek (LuxuryPro).
+    <a href="http://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution">Some rights reserved</a>;
+    please attribute properly and link back.
+    
+    <a href="https://github.com/LuxuryPro">github.</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+    renderMathInElement(document.getElementById('main'));
+</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-97780102-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+</div>
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/</loc>
+    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/</loc>
+    <lastmod>2017-05-11T16:11:58+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/2017/04/20/so-i-end-up-creating-blog...---hello-world/</loc>
+    <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/tags/android/</loc>
+    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/tags/bootloader/</loc>
+    <lastmod>2017-05-11T16:11:58+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/post/</loc>
+    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/</loc>
+    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/tags/</loc>
+    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/tags/twrp/</loc>
+    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/tags/xiaomi/</loc>
+    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
