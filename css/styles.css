@@ -66,8 +66,8 @@ header.header {
 /* general paragraph styling */
 
 p {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /* image styling */
@@ -98,6 +98,7 @@ a:hover {
 ul {
     margin-left: 20px;
     list-style-type: square;
+    padding-bottom: 10px;
 }
 
 ol {

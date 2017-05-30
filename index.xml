@@ -42,5 +42,16 @@ I hope that I will stay motivated to lead this blog as long as possible.
 Have nice day!</description>
     </item>
     
+    <item>
+      <title>About</title>
+      <link>https://www.reversance.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.reversance.com/about/</guid>
+      <description>Hello and welcome to my blog site. I would like to encourage you to look around and explore it.
+About me My name is Radek and I am currently studying Computer Science at Master&amp;rsquo;s academic degree. My main interests include programming in various languages and reverse engineering. I use arch linux at every day basis. I have big experience working with various Linux distributions such as:
+ debian ubuntu redhat arch  I created this blog to establish my Computer Science knowledge and share my thoughts and experience.</description>
+    </item>
+    
   </channel>
 </rss>
