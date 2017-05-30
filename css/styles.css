@@ -182,6 +182,10 @@ pre {
     overflow-x: scroll;
 }
 
+article {
+    text-align: justify;
+}
+
 /* general background styling */
 
 * { padding: 0; margin: 0; }
