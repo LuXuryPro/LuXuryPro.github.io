@@ -13,7 +13,9 @@
         <link href="https://www.reversance.com/index.xml" rel="alternate" type="application/rss+xml" title="Reversance blog"/>
 
         
-<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery.min.js"</script>
+<script src="/js/bootstrap.min.js"</script>
 
 
 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
@@ -22,6 +24,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/katex.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.3.0/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
         
 <script>
@@ -41,17 +48,20 @@
 
 
 <header class="header">
-    <div>
-        <div style="float:left">
-            <a href="/" class="title">Reversance blog</a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Reversance blog </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Blog</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/contact/"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+                <li><a href="/about/"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
+            </ul>
         </div>
-        <div style="float:right">
-            <a class="title" href='/about/'>➤ About</a>
-        </div>
-    </div>
-    <div style="clear: both;">
-    <p>Linux - Android - Programming - Security - Reverse Engineering</p>
-    </div>
+    </nav>
 </header>
 
 
@@ -60,44 +70,44 @@
         
             <article class="post">
     <header class="post-summary-header">
-      <p class="post-title"><a href="https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/">▶ Installing and using TWRP Recovery for Xiaomi Redmi Note 4 MTK </a></p>
-      <p class="post-meta">30 May 2017 - Can be read in 4 min </p>
+        <h3> <p class="post-title"><a href="https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/">Installing and using TWRP Recovery for Xiaomi Redmi Note 4 MTK </a></p> </h3>
+        <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span> 30 May 2017 - <span class="glyphicon glyphicon-time"></span> Can be read in 4 min </p>
     </header>
 
+    <div>
     In the last post I have presented you way of unlocking bootloader in Xiaomi Redmi Note 4. Now it is the time to install custom Recovery Image and use it to flash your desired ROM. Remember that to follow this instructions you need to have unlocked bootloader.
 Warning  Custom recovery image will allow you to make deep modifications in your phone software. This includes complete remove of Android operation system (don&rsquo;t worry it can be installed again).
-    <footer>
-        <a href='https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/'><nobr>more →</nobr></a>
-    </footer>
+    </div>
+    <a class="btn btn-primary" href='https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/'><nobr><span class="glyphicon glyphicon-book"></span> Read more...</nobr></a>
 </article>
 
         
             <article class="post">
     <header class="post-summary-header">
-      <p class="post-title"><a href="https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/">▶ Redmi Note 4 MTK Bootloader Unlocking using Linux </a></p>
-      <p class="post-meta">11 May 2017 - Can be read in 6 min </p>
+        <h3> <p class="post-title"><a href="https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/">Redmi Note 4 MTK Bootloader Unlocking using Linux </a></p> </h3>
+        <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span> 11 May 2017 - <span class="glyphicon glyphicon-time"></span> Can be read in 6 min </p>
     </header>
 
+    <div>
     After long and tedious process of unlocking bootloader in my Xiaomi Redmi Note 4 phone using linux, to sum up I decided to write definitive tutorial about it. I have collected all informations that were scattered around internet and gathered them in one place.
 Note This tutorial is written especially for MTK SOC devices, so if you have locked bootlader on other Xiaomi phone that Redmi Note 4 and it is MTK, then you can try unlocking it using tools and methods presented here.
-    <footer>
-        <a href='https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/'><nobr>more →</nobr></a>
-    </footer>
+    </div>
+    <a class="btn btn-primary" href='https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/'><nobr><span class="glyphicon glyphicon-book"></span> Read more...</nobr></a>
 </article>
 
         
             <article class="post">
     <header class="post-summary-header">
-      <p class="post-title"><a href="https://www.reversance.com/2017/04/20/so-i-end-up-creating-blog...---hello-world/">▶ So I end up creating blog... - Hello world! </a></p>
-      <p class="post-meta">20 Apr 2017 - Can be read in 1 min </p>
+        <h3> <p class="post-title"><a href="https://www.reversance.com/2017/04/20/hello-world/">So I end up creating blog... - Hello world! </a></p> </h3>
+        <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span> 20 Apr 2017 - <span class="glyphicon glyphicon-time"></span> Can be read in 1 min </p>
     </header>
 
+    <div>
     Hello! This is my first post on my new blog. I hope it will be intresting site for everyone. I will mainly write about computer science related topics, but sometimes there will be post about something else.
 I hope that I will stay motivated to lead this blog as long as possible.
 Have nice day!
-    <footer>
-        <a href='https://www.reversance.com/2017/04/20/so-i-end-up-creating-blog...---hello-world/'><nobr>more →</nobr></a>
-    </footer>
+    </div>
+    <a class="btn btn-primary" href='https://www.reversance.com/2017/04/20/hello-world/'><nobr><span class="glyphicon glyphicon-book"></span> Read more...</nobr></a>
 </article>
 
         
