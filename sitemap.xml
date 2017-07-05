@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.reversance.com/2017/07/05/finding-vector-perpendicural-to-another-vector/</loc>
+    <lastmod>2017-07-05T17:30:36+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/</loc>
     <lastmod>2017-05-30T12:33:05+02:00</lastmod>
   </url>
@@ -15,6 +20,12 @@
   <url>
     <loc>https://www.reversance.com/2017/04/20/hello-world/</loc>
     <lastmod>2017-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/tags/3d/</loc>
+    <lastmod>2017-07-05T17:30:36+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -43,14 +54,20 @@
   </url>
   
   <url>
+    <loc>https://www.reversance.com/tags/math/</loc>
+    <lastmod>2017-07-05T17:30:36+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.reversance.com/post/</loc>
-    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <lastmod>2017-07-05T17:30:36+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.reversance.com/</loc>
-    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <lastmod>2017-07-05T17:30:36+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -61,7 +78,7 @@
   
   <url>
     <loc>https://www.reversance.com/tags/</loc>
-    <lastmod>2017-05-30T12:33:05+02:00</lastmod>
+    <lastmod>2017-07-05T17:30:36+02:00</lastmod>
     <priority>0</priority>
   </url>
   

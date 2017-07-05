@@ -6,10 +6,21 @@
     <description>Recent content on Reversance blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 May 2017 12:33:05 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jul 2017 17:30:36 +0200</lastBuildDate>
     
 	<atom:link href="https://www.reversance.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Finding vector perpendicural to another vector</title>
+      <link>https://www.reversance.com/2017/07/05/finding-vector-perpendicural-to-another-vector/</link>
+      <pubDate>Wed, 05 Jul 2017 17:30:36 +0200</pubDate>
+      
+      <guid>https://www.reversance.com/2017/07/05/finding-vector-perpendicural-to-another-vector/</guid>
+      <description>Hello, in this post I will present solution for math problem I stumbled upon recently. The task was given as folows:
+ Given arbitrary 3D vector from 3D space find any vector that is perpendicural to it. Note that there is infinite numer of vectors perpendicural to given one.
+ At first glance the task seems to be very difficult. Let&amp;rsquo;s write some mathematical equations to help us find solution.</description>
+    </item>
     
     <item>
       <title>Installing and using TWRP Recovery for Xiaomi Redmi Note 4 MTK</title>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <base href="https://www.reversance.com/">
+        <title>Finding vector perpendicural to another vector</title>
+        <link rel="canonical" href="https://www.reversance.com/2017/07/05/finding-vector-perpendicural-to-another-vector/">
+        <link href="" rel="alternate" type="application/rss+xml" title="Reversance blog"/>
+
+        
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<script src="/js/jquery.min.js"</script>
+<script src="/js/bootstrap.min.js"</script>
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {'delimiters':
+        [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "@@", right: "@@", display: false}
+        ]}
+    );
+    });
+</script>
+
+<link rel="stylesheet" href="/css/styles.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+        
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-97780102-1' , 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+        </head>
+    <body>
+        <div class="column">
+
+<header class="header">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Reversance blog </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Blog</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/index.xml/" type="application/rss+xml" target="_blank"><i class="fa fa-rss"></i> RSS</a></li>
+                <li><a href="/contact/"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+                <li><a href="/about/"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<section id="main">
+    <header class="post-header">
+        <h1> <p class="post-title"><a href="https://www.reversance.com/2017/07/05/finding-vector-perpendicural-to-another-vector/">Finding vector perpendicural to another vector </a></p> </h1>
+      <p class="post-meta">5 Jul 2017 - Can be read in 4 min </p>
+      
+        <p> Tags:
+        
+        <a href="/tags/3d"><span class="glyphicon glyphicon-tag"></span> 3D</a>
+        
+        <a href="/tags/math"><span class="glyphicon glyphicon-tag"></span> math</a>
+        
+        </p>
+        
+    </header>
+    <article itemprop="articleBody" id="content">
+       
+
+<p>Hello, in this post I will present solution for math problem I stumbled upon
+recently. The task was given as folows:</p>
+
+<blockquote>
+<p>Given arbitrary 3D vector from 3D space find any vector that is perpendicural to
+it. Note that there is infinite numer of vectors perpendicural to given one.</p>
+</blockquote>
+
+<p>At first glance the task seems to be very difficult. Let&rsquo;s write some
+mathematical equations to help us find solution.</p>
+
+<h2 id="dot-product">Dot product</h2>
+
+<p>First of all we will remind ourselvs about dot product operator defined for
+vectors. Given any two vectors @@\vec{A}@@ and @@\vec{B}@@ we define dot product
+as following equation:
+$$\vec{A} \cdot \vec{B} = \sum_{i = 1}^N \vec{A}_i * \vec{B}_i$$</p>
+
+<p>Where @@\vec{A}_i@@ and @@\vec{B}_i@@ are @@i@@-th components of @@N@@ dimensional
+vectors. As we can see dot product is only defined for vectors that are the same
+size. In other words we can&rsquo;t compute dot product for pair of 2D and 3D vector directly.</p>
+
+<h2 id="angle-beetween-vectors">Angle beetween vectors</h2>
+
+<p>Using dot product we can compute angle beetween vectors. Let&rsquo;s write formula
+that will allow us to make this calculation.</p>
+
+<p>$$\vec{A} \cdot \vec{B} = ||\vec{A}|| * ||\vec{B}|| * \cos(\theta)$$</p>
+
+<p>so the angle @@\theta@@ is given by
+$$theta = \cos^{-1}\left(\frac{\vec{A} \cdot \vec{B}}{||\vec{A}|| * ||\vec{B}||}\right)$$</p>
+
+<h2 id="perpendicular-vectors">Perpendicular vectors</h2>
+
+<p>If vectors have to be perpendicural to each other the angle beetween them needs to be equal
+@@90^\circ@@ (@@\frac{\pi}{4}@@).</p>
+
+<p>We know that:
+$$\cos(\frac{\pi}{4}) = 0$$</p>
+
+<p>So lets insert it into out previos equation:
+$$\vec{A} \cdot \vec{B} = ||\vec{A}|| * ||\vec{B}|| * \cos(\frac{\pi}{4})$$
+$$\vec{A} \cdot \vec{B} = ||\vec{A}|| * ||\vec{B}|| * 0$$</p>
+
+<p>Which leads us to following very important formula:
+$$\vec{A} \cdot \vec{B} = 0$$</p>
+
+<h2 id="2d-example">2D example</h2>
+
+<p>Let&rsquo;s suppose we have vector @@\vec{A} = (A_x, A_y)@@ and we want to find vector that is
+perpendicural to it. Starting with formula:
+$$\vec{A} \cdot \vec{U} = 0$$</p>
+
+<p>we set up out unknown vector to @@\vec{U} = (U_x, U_y)@@</p>
+
+<p>By inserting vectors to equation:
+$$\vec{A} \cdot \vec{B} = \sum_{i = 1}^N \vec{A}_i * \vec{B}_i$$</p>
+
+<p>we get:
+$$\vec{A} \cdot \vec{U} = \vec{A}_x * \vec{U}_x + \vec{A}_y * \vec{U}_y$$</p>
+
+<p>so it lead us to:
+$$\vec{A}_x * \vec{U}_x + \vec{A}_y * \vec{U}_y = 0$$</p>
+
+<p>Right now it is obvious that this equation have more than one solution. Having in mind that any
+of perpendicural vectors that we can find will be correct solution let&rsquo;s use some assumption. If we
+arbitrarly set @@\vec{U}_x = 1@@ then our equation will turn into:
+$$\vec{A}_x + \vec{A}_y * \vec{U}_y = 0$$</p>
+
+<p>so:
+$$\vec{U}_y = - \left(\frac{\vec{A}_x}{\vec{A}_y}\right)$$</p>
+
+<p>and the whole solution will turn to be
+$$\vec{U} = (0, -\left(\frac{\vec{A}_x}{\vec{A}_y}\right))$$</p>
+
+<p>But what to do if @@\vec{A}_y = 0@@ ?</p>
+
+<p>The you need to set @@\vec{U}_y = 1@@ and follow previos steps which will lead us to:
+$$\vec{U} = (-\left(\frac{\vec{A}_y}{\vec{A}_x}\right), 0)$$</p>
+
+<p>If bouth @@\vec{A}_x@@ and @@\vec{A}_y@@ are equal to @@0@@ then we can&rsquo;t find perpendicural vector
+beacause @@\vec{A}@@ has a length of @@0@@.</p>
+
+<h2 id="3d-example">3D example</h2>
+
+<p>After showing 2D example 3D one will be more understandable. Now lets suppose we have vector
+@@\vec{A} = (A_x, A_y, A_z)@@ and we want to find vector that is perpendicural to it.
+Let&rsquo;s state that unknown vector is @@\vec{U} = (U_x, U_y, U_z)@@.</p>
+
+<p>We write dot product formula:
+$$\vec{A} \cdot \vec{U} = \vec{A}_x * \vec{U}_x + \vec{A}_y * \vec{U}_y + \vec{A_z} * \vec{U}_z$$</p>
+
+<p>And use property:
+$$\vec{A} \cdot \vec{U} = 0$$</p>
+
+<p>so:
+$$\vec{A}_x * \vec{U}_x + \vec{A}_y * \vec{U}_y + \vec{A_z} * \vec{U}_z = 0$$</p>
+
+<p>Now we use similar assumption to one used in 2D case. Suppose that @@\vec{U}_x = 1@@. This will
+reduce out equation to
+$$\vec{A}_x + \vec{A}_y * \vec{U}_y + \vec{A_z} * \vec{U}_z = 0$$</p>
+
+<p>which is very similar to 2D equation. Now we suppose also that @@\vec{U}_y = 1@@ and we get
+$$\vec{A}_x + \vec{A}_y + \vec{A_z} * \vec{U}_z = 0$$</p>
+
+<p>So solution is
+$$\vec{U} = (0, 0, -\left(\frac{\vec{A}_x + \vec{A}_y}{\vec{A}_z}\right))$$</p>
+
+<p>But only if @@\vec{A}_z@@ is not equal @@0@@. If that is not the case then you need to choose
+another component of @@\vec{U}@@ and set it arbitrarly to @@1@@.</p>
+
+<h2 id="final-code">Final code</h2>
+
+<p>To sum up I prepared simple Python function that will compute vector perpendicural to another for 3D
+case.</p>
+
+<pre><code class="language-python">class Vector:
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def give_perpendicular_vector(self):
+        if self.x != 0:
+            return Vector(-(self.y + self.z)/self.x, 0, 0)
+        if self.y != 0:
+            return Vector(0, -(self.x + self.z)/self.y, 0)
+        if self.z != 0:
+            return Vector(0, 0, -(self.x + self.y)/self.z)
+
+        raise ValueError(&quot;Can't compute perpendicular vector&quot;)
+</code></pre>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct.aspx">http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct.aspx</a></li>
+<li><a href="https://math.stackexchange.com/questions/133177/finding-a-unit-vector-perpendicular-to-another-vector">https://math.stackexchange.com/questions/133177/finding-a-unit-vector-perpendicular-to-another-vector</a></li>
+</ul>
+
+    </article>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'reversance';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+<footer class="bottom-footer">
+  <div class="copyright">
+    <p>
+    &copy; Radek (LuxuryPro).
+    <a href="http://creativecommons.org/licenses/by/4.0/" title="Creative Commons Attribution">Some rights reserved</a>;
+    please attribute properly and link back.
+    
+    <a href="https://github.com/LuxuryPro">github.</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+    renderMathInElement(document.getElementById('main'));
+</script>
+
+
+</div>
+</body>
+</html>
+
