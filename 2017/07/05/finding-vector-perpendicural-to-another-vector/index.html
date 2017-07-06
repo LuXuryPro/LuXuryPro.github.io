@@ -112,7 +112,7 @@ mathematical equations to help us find solution.</p>
 
 <h2 id="dot-product">Dot product</h2>
 
-<p>First of all we will remind ourselvs about dot product operator defined for
+<p>First of all we will remind ourselves about dot product operator defined for
 vectors. Given any two vectors @@\vec{A}@@ and @@\vec{B}@@ we define dot product
 as following equation:
 $$\vec{A} \cdot \vec{B} = \sum_{i = 1}^N \vec{A}_i * \vec{B}_i$$</p>
@@ -124,12 +124,12 @@ size. In other words we can&rsquo;t compute dot product for pair of 2D and 3D ve
 <h2 id="angle-beetween-vectors">Angle beetween vectors</h2>
 
 <p>Using dot product we can compute angle beetween vectors. Let&rsquo;s write formula
-that will allow us to make this calculation.</p>
+that will allow us to make this calculation:</p>
 
 <p>$$\vec{A} \cdot \vec{B} = ||\vec{A}|| * ||\vec{B}|| * \cos(\theta)$$</p>
 
 <p>so the angle @@\theta@@ is given by
-$$theta = \cos^{-1}\left(\frac{\vec{A} \cdot \vec{B}}{||\vec{A}|| * ||\vec{B}||}\right)$$</p>
+$$\theta = \cos^{-1}\left(\frac{\vec{A} \cdot \vec{B}}{||\vec{A}|| * ||\vec{B}||}\right)$$</p>
 
 <h2 id="perpendicular-vectors">Perpendicular vectors</h2>
 
@@ -146,13 +146,17 @@ $$\vec{A} \cdot \vec{B} = ||\vec{A}|| * ||\vec{B}|| * 0$$</p>
 <p>Which leads us to following very important formula:
 $$\vec{A} \cdot \vec{B} = 0$$</p>
 
+<p>It is only true when both @@\vec{A}@@ and @@\vec{B}@@ have length not equal
+to @@0@@. This equation tells us that if vectors will satisfy it,
+then angle beetween them is equal to @@90^\circ@@ (@@\frac{\pi}{4}@@).</p>
+
 <h2 id="2d-example">2D example</h2>
 
 <p>Let&rsquo;s suppose we have vector @@\vec{A} = (A_x, A_y)@@ and we want to find vector that is
 perpendicural to it. Starting with formula:
 $$\vec{A} \cdot \vec{U} = 0$$</p>
 
-<p>we set up out unknown vector to @@\vec{U} = (U_x, U_y)@@</p>
+<p>we set up our unknown vector to @@\vec{U} = (U_x, U_y)@@</p>
 
 <p>By inserting vectors to equation:
 $$\vec{A} \cdot \vec{B} = \sum_{i = 1}^N \vec{A}_i * \vec{B}_i$$</p>
@@ -164,20 +168,20 @@ $$\vec{A} \cdot \vec{U} = \vec{A}_x * \vec{U}_x + \vec{A}_y * \vec{U}_y$$</p>
 $$\vec{A}_x * \vec{U}_x + \vec{A}_y * \vec{U}_y = 0$$</p>
 
 <p>Right now it is obvious that this equation have more than one solution. Having in mind that any
-of perpendicural vectors that we can find will be correct solution let&rsquo;s use some assumption. If we
+of perpendicural vectors that we can find will be correct solution - let&rsquo;s use some assumption. If we
 arbitrarly set @@\vec{U}_x = 1@@ then our equation will turn into:
 $$\vec{A}_x + \vec{A}_y * \vec{U}_y = 0$$</p>
 
 <p>so:
 $$\vec{U}_y = - \left(\frac{\vec{A}_x}{\vec{A}_y}\right)$$</p>
 
-<p>and the whole solution will turn to be
-$$\vec{U} = (0, -\left(\frac{\vec{A}_x}{\vec{A}_y}\right))$$</p>
+<p>and the whole solution will turn to be:
+$$\vec{U} = \left(1, -\left(\frac{\vec{A}_x}{\vec{A}_y}\right)\right)$$</p>
 
 <p>But what to do if @@\vec{A}_y = 0@@ ?</p>
 
 <p>The you need to set @@\vec{U}_y = 1@@ and follow previos steps which will lead us to:
-$$\vec{U} = (-\left(\frac{\vec{A}_y}{\vec{A}_x}\right), 0)$$</p>
+$$\vec{U} = \left(-\left(\frac{\vec{A}_y}{\vec{A}_x}\right), 1\right)$$</p>
 
 <p>If bouth @@\vec{A}_x@@ and @@\vec{A}_y@@ are equal to @@0@@ then we can&rsquo;t find perpendicural vector
 beacause @@\vec{A}@@ has a length of @@0@@.</p>
@@ -205,15 +209,16 @@ $$\vec{A}_x + \vec{A}_y * \vec{U}_y + \vec{A_z} * \vec{U}_z = 0$$</p>
 $$\vec{A}_x + \vec{A}_y + \vec{A_z} * \vec{U}_z = 0$$</p>
 
 <p>So solution is
-$$\vec{U} = (0, 0, -\left(\frac{\vec{A}_x + \vec{A}_y}{\vec{A}_z}\right))$$</p>
+$$\vec{U} = \left(1, 1, -\left(\frac{\vec{A}_x +
+            \vec{A}_y}{\vec{A}_z}\right)\right)$$</p>
 
 <p>But only if @@\vec{A}_z@@ is not equal @@0@@. If that is not the case then you need to choose
 another component of @@\vec{U}@@ and set it arbitrarly to @@1@@.</p>
 
-<h2 id="final-code">Final code</h2>
+<h2 id="final-python-example-code">Final python example code</h2>
 
-<p>To sum up I prepared simple Python function that will compute vector perpendicural to another for 3D
-case.</p>
+<p>To sum up I prepared simple Python method that will compute vector perpendicural to another for 3D
+case. It can be easily inserted into existing implementation of vector class.</p>
 
 <pre><code class="language-python">class Vector:
     def __init__(self, x, y, z):
@@ -223,11 +228,11 @@ case.</p>
 
     def give_perpendicular_vector(self):
         if self.x != 0:
-            return Vector(-(self.y + self.z)/self.x, 0, 0)
+            return Vector(-(self.y + self.z)/self.x, 1, 1)
         if self.y != 0:
-            return Vector(0, -(self.x + self.z)/self.y, 0)
+            return Vector(1, -(self.x + self.z)/self.y, 1)
         if self.z != 0:
-            return Vector(0, 0, -(self.x + self.y)/self.z)
+            return Vector(1, 1, -(self.x + self.y)/self.z)
 
         raise ValueError(&quot;Can't compute perpendicular vector&quot;)
 </code></pre>
