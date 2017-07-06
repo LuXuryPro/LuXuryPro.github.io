@@ -60,8 +60,7 @@ Have nice day!</description>
       
       <guid>https://www.reversance.com/about/</guid>
       <description>Hello and welcome to my blog site. I would like to encourage you to look around and explore it.
-About me My name is Radek and I am currently studying Computer Science at Master&amp;rsquo;s academic degree. My main interests include programming in various languages and reverse engineering. I use arch linux at every day basis. I have big experience working with various Linux distributions such as:
- debian ubuntu redhat arch  I created this blog to establish my Computer Science knowledge and share my thoughts and experience.</description>
+About me Hello, my name is Radek and I am from Poland. Currently I am studying Computer Science at Master&amp;rsquo;s academic degree. My main interests include programming in various languages and reverse engineering. I use  arch linux at every day basis. I have big experience working with various Linux distributions such as:</description>
     </item>
     
     <item>
@@ -79,8 +78,8 @@ About me My name is Radek and I am currently studying Computer Science at Master
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.reversance.com/contact/</guid>
-      <description>You can contact me using followig ways:
- github bitbucket email: r&amp;hellip;@reversance.com  </description>
+      <description>You can contact me using email:
+ r&amp;hellip;@reversance.com  </description>
     </item>
     
   </channel>
