@@ -7,7 +7,7 @@
 <meta name="description" content="Blog about Linux - Android - Programming - Security - Reverse Engineering"/>
 
 
-        <base href="https://www.reversance.com/">
+        <base href="https://www.reversance.com/blog/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/">
         <title>Installing and using TWRP Recovery for Xiaomi Redmi Note 4 MTK</title>
         <link rel="canonical" href="https://www.reversance.com/blog/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/">
         <link href="" rel="alternate" type="application/rss+xml" title="Reversance"/>
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>hljs.initHighlightingOnLoad();</script>
 
 <link rel="stylesheet" href="/css/styles.css">
+<script src="/js/common.js"</script>
 
         
 <script>
@@ -122,10 +123,13 @@ Warning  Custom recovery image will allow you to make deep modifications in your
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Reversance </a>
+                <a class="navbar-brand" href="https://www.reversance.com/">Reversance </a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/blog/">Blog</a></li>
+                
+                 
+                <li class=" active "><a href="/blog/ ">Blog</a></li>
+                
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/blog/archive/"><span class="glyphicon glyphicon-hdd"></span> Archive</a></li>
@@ -139,8 +143,15 @@ Warning  Custom recovery image will allow you to make deep modifications in your
 
 
 <section id="main">
+    <div>
+        <button style="display: none;" id="go-to-bottom" type="button" class="btn pull-right btn-primary"><span class="glyphicon glyphicon-chevron-down"></span> Go to bottom</button>
+    </div>
     <header class="post-header">
-        <h1> <p class="post-title"><a href="https://www.reversance.com/blog/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/">Installing and using TWRP Recovery for Xiaomi Redmi Note 4 MTK </a></p> </h1>
+        <h1>
+            <p class="post-title">
+                <a href="https://www.reversance.com/blog/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/">Installing and using TWRP Recovery for Xiaomi Redmi Note 4 MTK </a>
+            </p>
+        </h1>
         <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span>
 Published 30 May 2017 - <span class="glyphicon glyphicon-time"></span> Can be read in 4 min </p>
 
@@ -157,7 +168,9 @@ Published 30 May 2017 - <span class="glyphicon glyphicon-time"></span> Can be re
 
     </header>
     <article itemprop="articleBody" id="content">
-       
+            <div class="well" style="display: none;" id="toc">
+            </div>
+        
 
 <p>In the last post I have presented you way of unlocking bootloader in Xiaomi
 Redmi Note 4. Now it is the time to install custom Recovery Image and use
@@ -336,6 +349,9 @@ installed on your phone</li>
 </ul>
 
     </article>
+    <div>
+        <button style="display: none;" id="go-to-top" type="button" class="btn pull-right btn-primary"><span class="glyphicon glyphicon-chevron-up"></span> Go to top</button>
+    </div>
     <div id="disqus_thread"></div>
 <script type="text/javascript">
 

@@ -7,7 +7,7 @@
 <meta name="description" content="Blog about Linux - Android - Programming - Security - Reverse Engineering"/>
 
 
-        <base href="https://www.reversance.com/">
+        <base href="https://www.reversance.com/blog/hello-world/">
         <title>So I end up creating blog... - Hello world!</title>
         <link rel="canonical" href="https://www.reversance.com/blog/hello-world/">
         <link href="" rel="alternate" type="application/rss+xml" title="Reversance"/>
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>hljs.initHighlightingOnLoad();</script>
 
 <link rel="stylesheet" href="/css/styles.css">
+<script src="/js/common.js"</script>
 
         
 <script>
@@ -123,10 +124,13 @@ Have nice day!",
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Reversance </a>
+                <a class="navbar-brand" href="https://www.reversance.com/">Reversance </a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/blog/">Blog</a></li>
+                
+                 
+                <li class=" active "><a href="/blog/ ">Blog</a></li>
+                
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/blog/archive/"><span class="glyphicon glyphicon-hdd"></span> Archive</a></li>
@@ -140,15 +144,24 @@ Have nice day!",
 
 
 <section id="main">
+    <div>
+        <button style="display: none;" id="go-to-bottom" type="button" class="btn pull-right btn-primary"><span class="glyphicon glyphicon-chevron-down"></span> Go to bottom</button>
+    </div>
     <header class="post-header">
-        <h1> <p class="post-title"><a href="https://www.reversance.com/blog/hello-world/">So I end up creating blog... - Hello world! </a></p> </h1>
+        <h1>
+            <p class="post-title">
+                <a href="https://www.reversance.com/blog/hello-world/">So I end up creating blog... - Hello world! </a>
+            </p>
+        </h1>
         <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span>
 Published 20 Apr 2017 - <span class="glyphicon glyphicon-time"></span> Can be read in 1 min </p>
 
 
     </header>
     <article itemprop="articleBody" id="content">
-       <p>Hello! This is my first post on my new blog. I hope it will be intresting site
+            <div class="well" style="display: none;" id="toc">
+            </div>
+        <p>Hello! This is my first post on my new blog. I hope it will be intresting site
 for everyone. I will mainly write about computer science related topics, but
 sometimes there will be post about something else.</p>
 
@@ -157,6 +170,9 @@ sometimes there will be post about something else.</p>
 <p>Have nice day!</p>
 
     </article>
+    <div>
+        <button style="display: none;" id="go-to-top" type="button" class="btn pull-right btn-primary"><span class="glyphicon glyphicon-chevron-up"></span> Go to top</button>
+    </div>
     <div id="disqus_thread"></div>
 <script type="text/javascript">
 
