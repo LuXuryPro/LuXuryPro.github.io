@@ -13,10 +13,10 @@
     
     <item>
       <title>Redmi Note 4 MTK Bootloader Unlocking using Linux</title>
-      <link>https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/</link>
+      <link>https://www.reversance.com/blog/redmi-note-4-mtk-bootloader-unlocking-using-linux/</link>
       <pubDate>Thu, 11 May 2017 16:11:58 +0530</pubDate>
       
-      <guid>https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/</guid>
+      <guid>https://www.reversance.com/blog/redmi-note-4-mtk-bootloader-unlocking-using-linux/</guid>
       <description>After long and tedious process of unlocking bootloader in my Xiaomi Redmi Note 4 phone using linux, to sum up I decided to write definitive tutorial about it. I have collected all informations that were scattered around internet and gathered them in one place.
 Note This tutorial is written especially for MTK SOC devices, so if you have locked bootlader on other Xiaomi phone that Redmi Note 4 and it is MTK, then you can try unlocking it using tools and methods presented here.</description>
     </item>

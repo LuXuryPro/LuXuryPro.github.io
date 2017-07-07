@@ -3,22 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.reversance.com/2017/07/05/finding-vector-perpendicural-to-another-vector/</loc>
+    <loc>https://www.reversance.com/blog/finding-vector-perpendicural-to-another-vector/</loc>
     <lastmod>2017-07-05T17:30:36+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.reversance.com/2017/05/30/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/</loc>
+    <loc>https://www.reversance.com/blog/installing-and-using-twrp-recovery-for-xiaomi-redmi-note-4-mtk/</loc>
     <lastmod>2017-05-30T12:33:05+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.reversance.com/2017/05/11/redmi-note-4-mtk-bootloader-unlocking-using-linux/</loc>
+    <loc>https://www.reversance.com/blog/redmi-note-4-mtk-bootloader-unlocking-using-linux/</loc>
     <lastmod>2017-05-11T16:11:58+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://www.reversance.com/2017/04/20/hello-world/</loc>
+    <loc>https://www.reversance.com/blog/hello-world/</loc>
     <lastmod>2017-04-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,7 +39,13 @@
   </url>
   
   <url>
-    <loc>https://www.reversance.com/archive/</loc>
+    <loc>https://www.reversance.com/blog/archive/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.reversance.com/blog/</loc>
+    <lastmod>2017-07-05T17:30:36+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -54,12 +60,6 @@
   
   <url>
     <loc>https://www.reversance.com/tags/math/</loc>
-    <lastmod>2017-07-05T17:30:36+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.reversance.com/post/</loc>
     <lastmod>2017-07-05T17:30:36+02:00</lastmod>
     <priority>0</priority>
   </url>
