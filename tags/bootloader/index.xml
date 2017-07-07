@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bootloader on Reversance blog</title>
+    <title>Bootloader on Reversance</title>
     <link>https://www.reversance.com/tags/bootloader/</link>
-    <description>Recent content in Bootloader on Reversance blog</description>
+    <description>Recent content in Bootloader on Reversance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 11 May 2017 16:11:58 +0530</lastBuildDate>

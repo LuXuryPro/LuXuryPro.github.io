@@ -10,7 +10,7 @@
         <base href="https://www.reversance.com/">
         <title>So I end up creating blog... - Hello world!</title>
         <link rel="canonical" href="https://www.reversance.com/blog/hello-world/">
-        <link href="" rel="alternate" type="application/rss+xml" title="Reversance blog"/>
+        <link href="" rel="alternate" type="application/rss+xml" title="Reversance"/>
 
         
 <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -55,7 +55,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         <!-- ENTERING partial seo-schema.html -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "Reversance",
+  "alternateName": "Reversance.com",
+  "url": "https://www.reversance.com/"
+}
+</script>
 
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.reversance.com/blog/",
+      "name": "blog"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://www.reversance.com/blog/hello-world/",
+      "name": "So I end up creating blog... - Hello world!"
+    }
+  }]
+}
+</script>
 
 <script type="application/ld+json">
 {
@@ -81,36 +111,6 @@ Have nice day!",
     "keywords" : [  ]
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "item": {
-      "@id": "https://www.reversance.com/blog/",
-      "name": "blog"
-    }
-  },{
-    "@type": "ListItem",
-    "position": 2,
-    "item": {
-      "@id": "https://www.reversance.com/blog/hello-world/",
-      "name": "So I end up creating blog... - Hello world!"
-    }
-  }]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "WebSite",
-  "name": "reversance",
-  "alternateName": "Reversance blog",
-  "url": "https://www.reversance.com/"
-}
-</script>
 
 
 <!-- LEAVING partial seo-schema.html -->
@@ -123,7 +123,7 @@ Have nice day!",
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Reversance blog </a>
+                <a class="navbar-brand" href="/">Reversance </a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/blog/">Blog</a></li>
