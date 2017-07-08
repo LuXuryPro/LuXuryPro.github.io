@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>Finding vector perpendicural to another vector</title>
-      <link>https://www.reversance.com/blog/finding-vector-perpendicural-to-another-vector/</link>
+      <title>Finding vector perpendicular to another vector</title>
+      <link>https://www.reversance.com/blog/finding-vector-perpendicular-to-another-vector/</link>
       <pubDate>Wed, 05 Jul 2017 17:30:36 +0200</pubDate>
       
-      <guid>https://www.reversance.com/blog/finding-vector-perpendicural-to-another-vector/</guid>
-      <description>Hello, in this post I will present solution for math problem I stumbled upon recently. The task was given as folows:
- Given arbitrary 3D vector from 3D space find any vector that is perpendicural to it. Note that there is infinite numer of vectors perpendicural to given one.
+      <guid>https://www.reversance.com/blog/finding-vector-perpendicular-to-another-vector/</guid>
+      <description>Hello, in this post I will present solution for math problem I stumbled upon recently. The task was given as follows:
+ Given arbitrary 3D vector from 3D space find any vector that is perpendicular to it. Note that there is infinite number of vectors perpendicular to given one.
  At first glance the task seems to be very difficult. Let&amp;rsquo;s write some mathematical equations to help us find solution.</description>
     </item>
     

@@ -7,9 +7,9 @@
 <meta name="description" content="Blog about Linux - Android - Programming - Security - Reverse Engineering"/>
 
 
-        <base href="https://www.reversance.com/blog/finding-vector-perpendicural-to-another-vector/">
-        <title>Finding vector perpendicural to another vector</title>
-        <link rel="canonical" href="https://www.reversance.com/blog/finding-vector-perpendicural-to-another-vector/">
+        <base href="https://www.reversance.com/blog/finding-vector-perpendicular-to-another-vector/">
+        <title>Finding vector perpendicular to another vector</title>
+        <link rel="canonical" href="https://www.reversance.com/blog/finding-vector-perpendicular-to-another-vector/">
         <link href="" rel="alternate" type="application/rss+xml" title="Reversance"/>
 
         
@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function() {
     "@type": "ListItem",
     "position": 2,
     "item": {
-      "@id": "https://www.reversance.com/blog/finding-vector-perpendicural-to-another-vector/",
-      "name": "Finding vector perpendicural to another vector"
+      "@id": "https://www.reversance.com/blog/finding-vector-perpendicular-to-another-vector/",
+      "name": "Finding vector perpendicular to another vector"
     }
   }]
 }
@@ -93,10 +93,10 @@ document.addEventListener("DOMContentLoaded", function() {
     "@context" : "http://schema.org",
     "@type" : "BlogPosting",
     "articleSection" : "blog",
-    "name" : "Finding vector perpendicural to another vector",
-    "headline" : "Finding vector perpendicural to another vector",
-    "description" : "Hello, in this post I will present solution for math problem I stumbled upon recently. The task was given as folows:
- Given arbitrary 3D vector from 3D space find any vector that is perpendicural to it. Note that there is infinite numer of vectors perpendicural to given one.
+    "name" : "Finding vector perpendicular to another vector",
+    "headline" : "Finding vector perpendicular to another vector",
+    "description" : "Hello, in this post I will present solution for math problem I stumbled upon recently. The task was given as follows:
+ Given arbitrary 3D vector from 3D space find any vector that is perpendicular to it. Note that there is infinite number of vectors perpendicular to given one.
  At first glance the task seems to be very difficult. Let&rsquo;s write some mathematical equations to help us find solution.",
     "inLanguage" : "en-US",
     "author" : "Radek (LuxuryPro)",
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function() {
     "copyrightYear" : "2017",
     "datePublished": "2017-07-05T17:30:36CEST",
     "dateModified" : "2017-07-05T17:30:36CEST",
-    "url" : "https://www.reversance.com/blog/finding-vector-perpendicural-to-another-vector/",
+    "url" : "https://www.reversance.com/blog/finding-vector-perpendicular-to-another-vector/",
     "wordCount" : "778",
     "image" : [  ],
     "keywords" : [ "3D", "math" ]
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <header class="post-header">
         <h1>
             <p class="post-title">
-                <a href="https://www.reversance.com/blog/finding-vector-perpendicural-to-another-vector/">Finding vector perpendicural to another vector </a>
+                <a href="https://www.reversance.com/blog/finding-vector-perpendicular-to-another-vector/">Finding vector perpendicular to another vector </a>
             </p>
         </h1>
         <p class="post-meta"><span class="glyphicon glyphicon-calendar"></span>
@@ -172,11 +172,11 @@ Published 5 Jul 2017 - <span class="glyphicon glyphicon-time"></span> Can be rea
         
 
 <p>Hello, in this post I will present solution for math problem I stumbled upon
-recently. The task was given as folows:</p>
+recently. The task was given as follows:</p>
 
 <blockquote>
-<p>Given arbitrary 3D vector from 3D space find any vector that is perpendicural to
-it. Note that there is infinite numer of vectors perpendicural to given one.</p>
+<p>Given arbitrary 3D vector from 3D space find any vector that is perpendicular to
+it. Note that there is infinite number of vectors perpendicular to given one.</p>
 </blockquote>
 
 <p>At first glance the task seems to be very difficult. Let&rsquo;s write some
@@ -193,9 +193,9 @@ $$\vec{A} \cdot \vec{B} = \sum_{i = 1}^N \vec{A}_i * \vec{B}_i$$</p>
 vectors. As we can see dot product is only defined for vectors that are the same
 size. In other words we can&rsquo;t compute dot product for pair of 2D and 3D vector directly.</p>
 
-<h2 id="angle-beetween-vectors">Angle beetween vectors</h2>
+<h2 id="angle-between-vectors">Angle between vectors</h2>
 
-<p>Using dot product we can compute angle beetween vectors. Let&rsquo;s write formula
+<p>Using dot product we can compute angle between vectors. Let&rsquo;s write formula
 that will allow us to make this calculation:</p>
 
 <p>$$\vec{A} \cdot \vec{B} = ||\vec{A}|| * ||\vec{B}|| * \cos(\theta)$$</p>
@@ -205,13 +205,13 @@ $$\theta = \cos^{-1}\left(\frac{\vec{A} \cdot \vec{B}}{||\vec{A}|| * ||\vec{B}||
 
 <h2 id="perpendicular-vectors">Perpendicular vectors</h2>
 
-<p>If vectors have to be perpendicural to each other the angle beetween them needs to be equal
+<p>If vectors have to be perpendicular to each other the angle between them needs to be equal
 @@90^\circ@@ (@@\frac{\pi}{4}@@).</p>
 
 <p>We know that:
 $$\cos(\frac{\pi}{4}) = 0$$</p>
 
-<p>So lets insert it into out previos equation:
+<p>So lets insert it into out previous equation:
 $$\vec{A} \cdot \vec{B} = ||\vec{A}|| * ||\vec{B}|| * \cos(\frac{\pi}{4})$$
 $$\vec{A} \cdot \vec{B} = ||\vec{A}|| * ||\vec{B}|| * 0$$</p>
 
@@ -220,12 +220,12 @@ $$\vec{A} \cdot \vec{B} = 0$$</p>
 
 <p>It is only true when both @@\vec{A}@@ and @@\vec{B}@@ have length not equal
 to @@0@@. This equation tells us that if vectors will satisfy it,
-then angle beetween them is equal to @@90^\circ@@ (@@\frac{\pi}{4}@@).</p>
+then angle between them is equal to @@90^\circ@@ (@@\frac{\pi}{4}@@).</p>
 
 <h2 id="2d-example">2D example</h2>
 
 <p>Let&rsquo;s suppose we have vector @@\vec{A} = (A_x, A_y)@@ and we want to find vector that is
-perpendicural to it. Starting with formula:
+perpendicular to it. Starting with formula:
 $$\vec{A} \cdot \vec{U} = 0$$</p>
 
 <p>we set up our unknown vector to @@\vec{U} = (U_x, U_y)@@</p>
@@ -240,8 +240,8 @@ $$\vec{A} \cdot \vec{U} = \vec{A}_x * \vec{U}_x + \vec{A}_y * \vec{U}_y$$</p>
 $$\vec{A}_x * \vec{U}_x + \vec{A}_y * \vec{U}_y = 0$$</p>
 
 <p>Right now it is obvious that this equation have more than one solution. Having in mind that any
-of perpendicural vectors that we can find will be correct solution - let&rsquo;s use some assumption. If we
-arbitrarly set @@\vec{U}_x = 1@@ then our equation will turn into:
+of perpendicular vectors that we can find will be correct solution - let&rsquo;s use some assumption. If we
+arbitrarily set @@\vec{U}_x = 1@@ then our equation will turn into:
 $$\vec{A}_x + \vec{A}_y * \vec{U}_y = 0$$</p>
 
 <p>so:
@@ -252,16 +252,16 @@ $$\vec{U} = \left(1, -\left(\frac{\vec{A}_x}{\vec{A}_y}\right)\right)$$</p>
 
 <p>But what to do if @@\vec{A}_y = 0@@ ?</p>
 
-<p>The you need to set @@\vec{U}_y = 1@@ and follow previos steps which will lead us to:
+<p>The you need to set @@\vec{U}_y = 1@@ and follow previous steps which will lead us to:
 $$\vec{U} = \left(-\left(\frac{\vec{A}_y}{\vec{A}_x}\right), 1\right)$$</p>
 
-<p>If bouth @@\vec{A}_x@@ and @@\vec{A}_y@@ are equal to @@0@@ then we can&rsquo;t find perpendicural vector
-beacause @@\vec{A}@@ has a length of @@0@@.</p>
+<p>If both @@\vec{A}_x@@ and @@\vec{A}_y@@ are equal to @@0@@ then we can&rsquo;t find perpendicular vector
+because @@\vec{A}@@ has a length of @@0@@.</p>
 
 <h2 id="3d-example">3D example</h2>
 
 <p>After showing 2D example 3D one will be more understandable. Now lets suppose we have vector
-@@\vec{A} = (A_x, A_y, A_z)@@ and we want to find vector that is perpendicural to it.
+@@\vec{A} = (A_x, A_y, A_z)@@ and we want to find vector that is perpendicular to it.
 Let&rsquo;s state that unknown vector is @@\vec{U} = (U_x, U_y, U_z)@@.</p>
 
 <p>We write dot product formula:
@@ -285,11 +285,11 @@ $$\vec{U} = \left(1, 1, -\left(\frac{\vec{A}_x +
             \vec{A}_y}{\vec{A}_z}\right)\right)$$</p>
 
 <p>But only if @@\vec{A}_z@@ is not equal @@0@@. If that is not the case then you need to choose
-another component of @@\vec{U}@@ and set it arbitrarly to @@1@@.</p>
+another component of @@\vec{U}@@ and set it arbitrarily to @@1@@.</p>
 
 <h2 id="final-python-example-code">Final python example code</h2>
 
-<p>To sum up I prepared simple Python method that will compute vector perpendicural to another for 3D
+<p>To sum up I prepared simple Python method that will compute vector perpendicular to another for 3D
 case. It can be easily inserted into existing implementation of vector class.</p>
 
 <pre><code class="language-python">class Vector:
